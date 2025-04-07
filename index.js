@@ -112,11 +112,25 @@ generateBtn.addEventListener('click', function () {
 // Copy password to clipboard
 let copyBtn1 = document.querySelector('.copy1');
 let copyBtn2 = document.querySelector('.copy2');
+
 copyBtn1.addEventListener('click', function () {
   password1.select();
   document.execCommand('copy');
+
+  let originalText = password1.value;
+  password1.value = 'Copied!';
+  setTimeout(() => {
+    password1.value = originalText;
+  }, 2000);
 });
+
 copyBtn2.addEventListener('click', function () {
   password2.select();
   document.execCommand('copy');
+
+  let originalText = password2.value;
+  password2.value = 'Copied!';
+  setTimeout(() => {
+    password2.value = originalText;
+  }, 2000);
 });
