@@ -109,3 +109,14 @@ generateBtn.addEventListener('click', function () {
     password2.value += characters[randomPassword2];
   }
 });
+// Copy password to clipboard
+let copyBtn1 = document.querySelector('.copy1');
+let copyBtn2 = document.querySelector('.copy2');
+copyBtn1.addEventListener('click', function () {
+  password1.select();
+  document.execCommand('copy');
+});
+copyBtn2.addEventListener('click', function () {
+  password2.select();
+  document.execCommand('copy');
+});
